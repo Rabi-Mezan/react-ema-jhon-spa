@@ -35,6 +35,10 @@ product-details{
     
 }
 
+.product button:hover{
+background-color: black;
+color: white;
+}
 .add-cart svg{
     width: 15px;
     margin-right: 5px;

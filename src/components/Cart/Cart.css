@@ -1,0 +1,14 @@
+.cart h3,h5{
+text-align: center;
+}
+
+.cart-clac p{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 10px;
+}
+
+.cart-clac h4{
+    display: grid;
+  grid-template-columns: 2fr 1fr;
+}
