@@ -1,0 +1,28 @@
+.header{
+    text-align: center;
+}
+
+.logo{
+    height: 85px;
+    margin: 15px 0px;
+}
+
+.header nav{
+   background-color: black;
+   line-height: 30px;
+   display: flex;
+   align-items: flex-start;  
+}
+
+.header nav a{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.header nav a:hover{
+background-color: white;
+color: black;
+}
