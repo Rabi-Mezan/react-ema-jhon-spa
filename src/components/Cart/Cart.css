@@ -2,6 +2,10 @@
 text-align: center;
 }
 
+.cart{
+    position: sticky;
+    top: 0;
+}
 .cart-clac p{
   display: grid;
   grid-template-columns: 2fr 1fr;
