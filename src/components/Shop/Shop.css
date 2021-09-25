@@ -2,7 +2,14 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
-
+ .search-container{
+     background-color: black;
+     text-align: center;
+     line-height: 50px;
+ }
+ .search-container input{
+     width: 350px;
+ }
 .product-container{
     margin-right: 10px;
     margin-left: 15%;

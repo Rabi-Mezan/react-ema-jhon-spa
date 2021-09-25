@@ -5,6 +5,7 @@
     margin-right: 5px;
     padding-bottom: 10px;
     border-bottom: 1px dotted black;
+    /* line-height: 25px; */
     
 }
 
@@ -12,6 +13,7 @@ product-details{
     margin-left: 10px;
 
 }
+
 .product h3{
     color: blue;
     font-weight: 400;
@@ -25,6 +27,7 @@ product-details{
     display: flex;
     align-items: center;
     padding: 6px 15px;
+    margin-top: 8px;
     background-color: rgb(255, 230, 0);
     /* color: white; */
     justify-content: center;
@@ -42,4 +45,7 @@ color: white;
 .add-cart svg{
     width: 15px;
     margin-right: 5px;
+}
+.icon-color{
+    color: gold;
 }

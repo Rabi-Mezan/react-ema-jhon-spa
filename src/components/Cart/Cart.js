@@ -2,20 +2,27 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
-    // console.log(props.cart)
-    const { cart } = props;
 
+    const { cart } = props;
+    // console.log(cart)
+    let totalQuantity = 0;
     let total = 0;
+
     for (const product of cart) {
-        total = total + product.price;
+        if (!product.quantity) {
+            product.quantity = 1;
+        }
+        total = total + product.price * product.quantity;
+        totalQuantity = totalQuantity + product.quantity;
+        // console.log(totalQuantity)
     }
-    const shipping = 15;
+    const shipping = total > 0 ? 15 : 0;
     const tax = (total + shipping) * 0.1;
     const grandTotal = total + shipping + tax;
     return (
         <div className='cart'>
             <h3>Cart Summury</h3>
-            <h5>Ordered Items: {props.cart.length} </h5>
+            <h5>Ordered Items: {totalQuantity} </h5>
             <div className='cart-clac'>
                 <p>Total Price : <span>{total.toFixed(2)}</span></p>
                 <p>Shipping : <span> {shipping}</span></p>
