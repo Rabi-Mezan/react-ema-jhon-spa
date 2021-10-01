@@ -24,11 +24,11 @@ const Cart = (props) => {
             <h3>Cart Summury</h3>
             <h5>Ordered Items: {totalQuantity} </h5>
             <div className='cart-clac'>
-                <p>Total Price : <span>{total.toFixed(2)}</span></p>
-                <p>Shipping : <span> {shipping}</span></p>
-                <p>Tax :  <span>{tax.toFixed(2)}</span></p>
+                <p>Total Price : <span> ${total.toFixed(2)}</span></p>
+                <p>Shipping : <span> ${shipping}</span></p>
+                <p>Tax :  <span> ${tax.toFixed(2)}</span></p>
                 <hr />
-                <h4>Grand Total : <span>{grandTotal.toFixed(2)}</span> </h4>
+                <h4>Grand Total : <span> ${grandTotal.toFixed(2)}</span> </h4>
             </div>
         </div>
     );
