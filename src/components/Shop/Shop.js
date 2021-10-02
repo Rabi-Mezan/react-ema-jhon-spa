@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -6,6 +8,7 @@ import './Shop.css'
 
 const Shop = () => {
 
+    const history = useHistory();
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('./products.JSON')
@@ -17,6 +20,7 @@ const Shop = () => {
     }, [])
 
     const [displayProducts, setDisplayProducts] = useState([]);
+    // const [cart] = useCart(products)
 
     useEffect(() => {
         const savedProduct = getStoredCart()
@@ -45,11 +49,24 @@ const Shop = () => {
 
     const [cart, setCart] = useState([]);
     const handleAddToCart = product => {
-        const newCart = [...cart, product];
+        const exists = cart.find(pd => pd.key === product.key);
+        let newCart = [];
+        if (exists) {
+            const rest = cart.filter(pd => pd.key !== product.key);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, product]
+        }
+        else {
+            product.quantity = 1;
+            newCart = [...cart, product]
+        }
         setCart(newCart);
         addToDb(product.key)
     }
 
+    const handleReview = () => {
+        history.push('/order')
+    }
     return (
         <div>
             <div className='search-container'>
@@ -70,7 +87,9 @@ const Shop = () => {
                 <div className="cart-conainer">
                     <Cart
                         cart={cart}
-                    ></Cart>
+                    >
+                        <button onClick={handleReview} className='add-cart'>Review Your Order</button>
+                    </Cart>
                 </div>
             </div>
         </div>
