@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
+import useFirebase from '../../hooks/useFirebase';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 
 const Shop = () => {
+
 
     const history = useHistory();
     const [products, setProducts] = useState([]);

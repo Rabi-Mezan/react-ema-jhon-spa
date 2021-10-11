@@ -3,12 +3,17 @@
     grid-template-columns: 3fr 1fr;
 }
  .search-container{
-     background-color: black;
+     background-color: rgb(255, 255, 255);
      text-align: center;
      line-height: 50px;
+     margin: 20px 0px;
  }
  .search-container input{
      width: 350px;
+     height: 18px;
+     padding: 5px;
+     border-radius: 10px;
+     border: 1px solid gray;
  }
 .product-container{
     margin-right: 10px;

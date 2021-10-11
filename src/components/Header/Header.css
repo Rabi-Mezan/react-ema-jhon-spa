@@ -1,5 +1,6 @@
 .header{
     text-align: center;
+    
 }
 
 .logo{
@@ -11,15 +12,16 @@
    background-color: black;
    line-height: 30px;
    display: flex;
-   align-items: flex-start;  
+   align-items: flex-start; 
+  
 }
 
 .header nav a{
     text-decoration: none;
     padding: 10px;
     color: white;
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 16px;
+    margin-left: 6px;
 }
 
 .header nav a:hover{
