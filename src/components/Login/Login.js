@@ -22,7 +22,7 @@ const Login = () => {
         <div className='login'>
             <div>
                 <h3>Login Here</h3>
-                <form onSubmit="">
+                <form>
                     <p>Email <br /><input type="email" name="" id="" placeholder='your email' /></p>
                     <p>Password <br /> <input type="password" name="" id="" placeholder='your password' /></p>
                     <button

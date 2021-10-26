@@ -6,7 +6,7 @@ const Register = () => {
         <div className='login'>
             <div>
                 <h3>Sign Up Here</h3>
-                <form onSubmit="">
+                <form>
 
                     <p>Name <br /><input type="text" name="" id="" placeholder='your name' /></p>
                     <p>Email <br /><input type="email" name="" id="" placeholder='your email' /></p>
@@ -15,7 +15,7 @@ const Register = () => {
                     <button type="submit">Register</button>
                 </form>
                 <div className='register'>
-                    <h5>Already have an account ? <small> <Link to='/login'>login</Link></small> <br /> <button><i class="fab fa-google-plus-g"></i>Google Sign In</button></h5>
+                    <h5>Already have an account ? <small> <Link to='/login'>login</Link></small> <br /> <button>Google Sign In</button></h5>
                 </div>
             </div>
         </div>

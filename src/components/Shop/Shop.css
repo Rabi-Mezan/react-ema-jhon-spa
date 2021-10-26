@@ -21,3 +21,16 @@
     border-right: 1px solid gray;
 }
 
+.pagination{
+    margin: 20px;
+}
+
+.pagination button{
+    padding: 2px 10px;
+    margin-right: 5px;
+}
+
+.pagination .selected{
+    color: white;
+    background-color: rgb(86, 86, 224);
+}

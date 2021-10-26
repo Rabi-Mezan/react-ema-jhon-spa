@@ -12,16 +12,23 @@ const Shop = () => {
 
     const history = useHistory();
     const [products, setProducts] = useState([]);
+    const [displayProducts, setDisplayProducts] = useState([]);
+    const [page, setPage] = useState(0)
+    const [pageCount, setPageCount] = useState(0);
+    const size = 10;
     useEffect(() => {
-        fetch('./products.JSON')
+        fetch("http://localhost:5000/products")
             .then(res => res.json())
             .then(data => {
-                setProducts(data);
-                setDisplayProducts(data);
+                setProducts(data.products);
+                setDisplayProducts(data.products);
+                const count = data.count;
+                const pageNumber = Math.ceil(count / size)
+                setPageCount(pageNumber);
             })
-    }, [])
+    }, [page])
 
-    const [displayProducts, setDisplayProducts] = useState([]);
+
     // const [cart] = useCart(products)
 
     useEffect(() => {
@@ -85,6 +92,17 @@ const Shop = () => {
                             handleAddToCart={handleAddToCart}
                         ></Product>)
                     }
+                    < div className="pagination">
+                        {
+                            [...Array(pageCount).keys()].map(number => <button
+                                key={number}
+                                className={number === page ? "selected" : ''}
+                                onClick={() => setPage(number)}
+                            >{number}
+                            </button>)
+                        }
+                    </div>
+
                 </div>
                 <div className="cart-conainer">
                     <Cart
@@ -94,7 +112,7 @@ const Shop = () => {
                     </Cart>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
